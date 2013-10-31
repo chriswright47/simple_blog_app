@@ -1,0 +1,18 @@
+<!-- this shows the home page of a single post -->
+
+<h3><%= @post.title %></h1>
+
+<div><%= @post.body %></div>
+
+<ul>
+  <% @tags.each do |tag| %>
+  <li><a href="/tag/<%= tag.name %>"><%= tag.name %></a></li>
+<% end %>
+</ul>
+<% if session[:user] %>
+  <% if session[:user].posts.find_by_title(@post.title) == @post %>
+    <p><a href="/edit_post/<%= @post.id %>"><button>edit this post</button></a></p>
+
+    <a href="/posts/<%= @post.id %>/delete"><button>Delete this post</button></a>
+  <% end %>
+<% end %>

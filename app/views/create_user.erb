@@ -1,0 +1,11 @@
+<% if session[:email_taken] %>
+<h2>That email is already taken, please try again</h2>
+<% end %>
+
+<form action="/create_user" method="post">
+  <label for="email">Please enter an email</label><br>
+  <input type="text" name="email"><br>
+  <label for="password">create a password</label><br>
+  <input type="text" name="password"><br>
+  <input type="submit" value="Create account">
+</form>

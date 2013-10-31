@@ -1,0 +1,11 @@
+<% if session[:failed_login] %>
+<h2>You're email and password did not match any pairs in our database, please try again or create an account</h2>
+<% end %>
+
+<form action="/login" method="post">
+  <label for="email">email</label><br>
+  <input type="text" name="email"><br>
+  <label for="password">password</label><br>
+  <input type="text" name="password"><br>
+  <input type="submit" value"Login">
+</form>

@@ -1,0 +1,8 @@
+<h2>Welcome <%= @user.email %></h2>
+
+<h4>Here are your posts:</h4>
+<ul>
+  <% @posts.each do |post| %>
+  <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
+  <% end %>
+</ul>
