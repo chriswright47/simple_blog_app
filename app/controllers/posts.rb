@@ -39,11 +39,15 @@ end
 
 post '/edit_post/:post_id' do
   post = Post.find(params[:post_id])
+  post.posts_tags.each do |tagging|
+    tagging.destroy
+  end
   post.update_attributes( title: params[:title],
     body: params[:body], )
   params.each do |tag, status|
     post.tags << Tag.find_by_name(tag) if status == 'true'
   end
+  redirect "/posts/#{params[:post_id]}"
 end
 
 get '/posts/:post_id/delete' do

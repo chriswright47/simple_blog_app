@@ -6,7 +6,11 @@
   <textarea name="body" cols="30" rows="10"><%= @post.body %></textarea>
   <p>add tags to your post</p>
   <% @tags.each do |tag| %>
-  <input type="checkbox" name="tag" value="<%= tag.name %>"><%= tag.name %><br>
+    <% if @post.tags.include?(tag) %>
+    <input type="checkbox" name="<%= tag.name %>" value="true" checked><%= tag.name %><br>
+    <% else %>
+    <input type="checkbox" name="<%= tag.name %>" value="true"><%= tag.name %><br>
+    <% end %>
   <% end %>
   <input type="submit" value="Edit this post!">
 

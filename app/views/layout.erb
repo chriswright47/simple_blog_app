@@ -22,9 +22,9 @@
     <ul class="top-bar">
       <li><a href="/"><button class="blue">Take me home</button></a></li>
       <% if session[:user_id] %>
-        <li><a href="/user/<%= session[:user_id] %>"><button>posts by <%= session[:user_email] %></button></a></li>
-        <li><a href="/logout"><button>logout</button></a></li>
-        <li><a href="/create_post"><button>create a post</button></a></li>
+        <li><a href="/user/<%= session[:user_id] %>"><button class='green'>posts by <%= session[:user_email] %></button></a></li>
+        <li><a href="/logout"><button class='red'>logout</button></a></li>
+        <li><a href="/create_post"><button class='blue'>create a post</button></a></li>
       <% else %>
         <li><a href="/login"><button class="green">login</button></a></li>
         <li><a href="/create_user"><button class="green">create account</button></a></li>
