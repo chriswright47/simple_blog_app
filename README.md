@@ -1,8 +1,8 @@
 #Blog One
 
 Run the following rake tasks to get started:
-rake db:create
-rake db:migrate
+rake db:create,
+rake db:migrate,
 rake db:seed
 
 Then run shotgun or sinatra to launch web app.
