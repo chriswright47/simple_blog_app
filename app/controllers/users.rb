@@ -17,6 +17,7 @@ post '/login' do
   if user && user.password == params[:password]
     session[:user_id] = user.id
     session[:user_email] = user.email
+    session[:user_name] = user.name
     session[:failed_login] = false
     session[:user] = user
     redirect '/'
@@ -28,9 +29,10 @@ end
 
 post '/create_user' do
   if !User.find_by_email(params[:email]) # => means email does not exist
-    user = User.create!(email: params[:email], password: params[:password])
-    session[:user_id] = user.last.id
-    session[:user_email] = user.last.email
+    user = User.create!(name: params[:name], email: params[:email], password: params[:password])
+    session[:user_id] = user.id
+    session[:user_email] = user.email
+    session[:user_name] = user.name
     session[:user] = user
     redirect '/'
   else 

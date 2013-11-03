@@ -1,10 +1,10 @@
 <!-- this shows the home page of a single post -->
 
 <h3><%= @post.title %></h1>
-
+<h5>by <%= @user_name %></h5>
 <div><%= @post.body %></div>
 
-<ul>
+<ul id="post_tags">
   <% @tags.each do |tag| %>
   <li><a href="/tag/<%= tag.name %>"><%= tag.name %></a></li>
 <% end %>

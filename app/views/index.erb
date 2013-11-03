@@ -1,11 +1,12 @@
-<h4><a href="/posts"><button class="blue">take me to all posts now</button></a></h4>
 
 
 
-<h3>Or navigate to any of the following tags to view by category:</h3>
-<ul class="two-column-list">
+
+<div class='right-outer'>
+  <h3>Tags:</h3>
+<ul class="right-sidebar">
 <% @tags.each do |tag| %>
-<li><a href="/tag/<%= tag.name %>"><button><%= tag.name %></button></a></li>
+<li><a href="/tag/<%= tag.name %>"><button class='blue'><%= tag.name %></button></a></li>
 <% end %>
 </ul>
-
+</div>

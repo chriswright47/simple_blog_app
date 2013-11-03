@@ -12,9 +12,25 @@ th {
   list-style-type: none;
   padding-right: 20px;
 }
-.two-column-list li {
-  float: left;
-  width: 50%;
+
+.top-bar {
+  padding: 10px;
+  border: ridge #5C85AD;
+}
+
+.right-outer {
+  float: right;
+  }
+.right-sidebar li {
+  list-style-type: none; 
+
+}
+.right-outer h3 {
+  text-align: center;
+}
+
+.right-outer, .right-sidebar {
+  width: 150px;
 }
 
 .green {
@@ -30,3 +46,4 @@ th {
 .red {
   background-color: #FF8585;
 }
+

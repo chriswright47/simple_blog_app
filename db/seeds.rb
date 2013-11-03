@@ -1,12 +1,17 @@
-# this will seed the possible tags to the database
+require 'faker'
 
-# Tag.create(name: 'sports')
-# Tag.create(name: 'news')
-# Tag.create(name: 'international')
-# Tag.create(name: 'business')
-# Tag.create(name: 'science')
-# Tag.create(name: 'education')
-# Tag.create(name: 'travel')
-# Tag.create(name: 'health')
-# Tag.create(name: 'mathematics')
-# Tag.create(name: 'YOLO')
+@tags = []
+10.times { |i| @tags << Tag.create(name: Faker::Lorem.word) }
+
+
+@tags << Tag.create(name: 'YOLO')
+
+10.times do |i|
+  name = Faker::Name.first_name
+  user = User.create(name: name, email: Faker::Internet.email(name), password: Faker::Lorem.word)
+  10.times do |j|
+    post = Post.create(title: Faker::Lorem.sentence, body: Faker::Lorem.paragraph)
+    post.tags << @tags.sample(3)
+    user.posts << post
+  end
+end

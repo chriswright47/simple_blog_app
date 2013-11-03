@@ -12,6 +12,7 @@ end
 
 get '/posts/:post_id' do
   @post = Post.find(params[:post_id])
+  @user_name = User.find(@post.user_id).name
   @tags = @post.tags
   erb :post_page
 end
@@ -28,7 +29,7 @@ post '/create_post' do
     post.tags << Tag.find_by_name(tag) if status == 'true'
   end
   User.find(session[:user_id]).posts << post
-  redirect '/posts'
+  redirect "/user/#{session[:user_id]}"
 end
 
 get '/edit_post/:post_id' do

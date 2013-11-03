@@ -20,19 +20,20 @@
 <body class="container">
   <div>
     <ul class="top-bar">
-      <li><a href="/"><button class="blue">Take me home</button></a></li>
+      <li><a href="/"><button class="blue">Chris' Blog Site</button></a></li>
       <% if session[:user_id] %>
-        <li><a href="/user/<%= session[:user_id] %>"><button class='green'>posts by <%= session[:user_email] %></button></a></li>
+        <li><a href="/user/<%= session[:user_id] %>"><button class='green'>posts by <%= session[:user_name] %></button></a></li>
         <li><a href="/logout"><button class='red'>logout</button></a></li>
         <li><a href="/create_post"><button class='blue'>create a post</button></a></li>
       <% else %>
         <li><a href="/login"><button class="green">login</button></a></li>
         <li><a href="/create_user"><button class="green">create account</button></a></li>
       <% end %>
+      <li><a href="/posts"><button class='blue'>all posts</button></a></li>
       
     </ul>
   </div>
-  <h1>Chris' Blog Site</h1>
+  <br><br>
   <%= yield %>
 </body>
 </html>
