@@ -1,7 +1,6 @@
-<h2>Hi <%= @user.name %></h2>
+<h2 class='title'>Here are all posts by <%= @user.name %>:</h2>
 
-<h4>Here are your posts:</h4>
-<ul>
+<ul class='posts-list'>
   <% @posts.each do |post| %>
   <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
   <% end %>

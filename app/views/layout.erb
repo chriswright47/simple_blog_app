@@ -17,20 +17,28 @@
 
   <title></title>
 </head>
-<body class="container">
-  <div>
-    <ul class="top-bar">
-      <li><a href="/"><button class="blue">Chris' Blog Site</button></a></li>
-      <% if session[:user_id] %>
-        <li><a href="/user/<%= session[:user_id] %>"><button class='green'>posts by <%= session[:user_name] %></button></a></li>
-        <li><a href="/logout"><button class='red'>logout</button></a></li>
-        <li><a href="/create_post"><button class='blue'>create a post</button></a></li>
-      <% else %>
-        <li><a href="/login"><button class="green">login</button></a></li>
-        <li><a href="/create_user"><button class="green">create account</button></a></li>
+<body class='container'>
+
+  <ul class="top-bar">
+    <li><a id='home' href="/">Home</a></li>
+    <% if session[:user_id] %>
+    <li><a id='logout' href="/logout">logout</a></li>
+    <li><a class='create' href="/create_post">create a post</a></li>
+    <li><a href="/user/<%= session[:user_id] %>">posts by <%= session[:user_name] %></a></li>
+    <% else %>
+    <li><a id='home' href="/login">login</a></li>
+    <li><a class='create' href="/create_user">create account</a></li>
+    <% end %>
+    <li><a href="/posts">all posts archive</a></li>
+
+  </ul>
+
+  <div class='right-outer'>
+    <h3 class='title'>Tags:</h3>
+    <ul class="right-sidebar tag-list">
+      <% Tag.all.each do |tag| %>
+      <li><a href="/tag/<%= tag.name %>"><%= tag.name %></a></li>
       <% end %>
-      <li><a href="/posts"><button class='blue'>all posts</button></a></li>
-      
     </ul>
   </div>
   <br><br>

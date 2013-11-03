@@ -9,6 +9,8 @@
   <% @tags.each do |tag| %>
   <input type="checkbox" name="<%= tag.name %>" value="true"><%= tag.name %><br>
   <% end %>
+  <br>
   <input type="submit" value="Create this post!">
-
 </form>
+<br>
+<a href="/"><button>Cancel</button></a>

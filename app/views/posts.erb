@@ -1,8 +1,7 @@
-<!-- this should show all posts -->
 
-<h1>List of posts:</h1>
+<h1 class='title'>Posts archive:</h1>
 
-<ul>
+<ul class='posts-list'>
   <% @posts.each do |post| %>
   <li><a href="/posts/<%= post.id %>"><%= post.title %></a></li>
 <% end %>

@@ -6,7 +6,7 @@
 #   delete an existing post
 
 get '/posts' do
-  @posts = Post.all
+  @posts = Post.order('updated_at desc')
   erb :posts
 end
 

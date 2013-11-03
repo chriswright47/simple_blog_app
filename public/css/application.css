@@ -1,29 +1,124 @@
 .container {
   margin: 20px auto;
-  width: 800px;
+  width: 1000px;
   padding: 0px 20px 20px 20px;
 }
 th {
   text-align: left;
 }
 
-.top-bar li {
-  display: inline;
+.title{
+  padding-left: 20px; 
+  font:normal 25pt Arial;
+  color: #00297A;
+  text-shadow: 0 1px 0 #ccc,
+  0 2px 0 #c9c9c9,
+  0 3px 0 #bbb,
+  0 4px 0 #b9b9b9,
+  0 5px 0 #aaa,
+  0 6px 1px rgba(0,0,0,.1),
+  0 0 5px rgba(0,0,0,.1),
+  0 1px 3px rgba(0,0,0,.3),
+  0 3px 5px rgba(0,0,0,.2),
+  0 5px 10px rgba(0,0,0,.25),
+  0 10px 10px rgba(0,0,0,.2),
+  0 20px 20px rgba(0,0,0,.15);
+}
+.posts-list {
   list-style-type: none;
-  padding-right: 20px;
+  width: 600px;
 }
 
+.posts-list li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+.posts-list li:last-child {
+  border: none;
+}
+
+.posts-list li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 560px;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.posts-list li a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}
+
+button {
+  -webkit-transition: all .2 ease-in-out;}
+
+.top-bar li {
+    height: 28px;
+    float:left;
+    margin-right: 0px;
+    border-right: 1px solid #aaa;
+    padding: 0 20px;
+/*  display: inline;
+  list-style-type: none;
+  padding-right: 20px;*/
+}
+
+.top-bar li:last-child {
+  border-right: none;
+}
+
+.top-bar li a {
+  text-decoration: none;
+  color: #ccc;
+  font: 20px/1 Helvetica, Verdana, sans-serif;
+  text-transform: uppercase;
+  -webkit-transition: all 0.5s ease;
+  -moz-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.top-bar li a:hover {
+  color: #666;
+}
+.top-bar li #logout:hover {
+  color: #FF8585;
+}
+.top-bar li #home:hover {
+  color: #6CA7E1;
+}
+.top-bar li .create:hover {
+  color: #00CC66;
+}
+
+
+.top-bar li.active a {
+  font-weight: bold;
+  color: #333;
+} 
+
 .top-bar {
-  padding: 10px;
-  border: ridge #5C85AD;
+  overflow: auto;
+  list-style-type: none;
 }
 
 .right-outer {
   float: right;
-  }
+}
 .right-sidebar li {
   list-style-type: none; 
+}
 
+button:hover {
+  background-color: deeppink;
+  -webkit-transform: scale(1.1);
 }
 .right-outer h3 {
   text-align: center;
@@ -46,4 +141,34 @@ th {
 .red {
   background-color: #FF8585;
 }
+.tag-list {
+  list-style-type: none;
+  width: 100px;
+}
 
+.tag-list li {
+  font: 200 20px/1.5 Helvetica, Verdana, sans-serif;
+  border-bottom: 1px solid #ccc;
+}
+
+.tag-list li:last-child {
+  border: none;
+}
+
+.tag-list li a {
+  text-decoration: none;
+  color: #000;
+  display: block;
+  width: 100px;
+
+  -webkit-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -moz-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -o-transition: font-size 0.3s ease, background-color 0.3s ease;
+  -ms-transition: font-size 0.3s ease, background-color 0.3s ease;
+  transition: font-size 0.3s ease, background-color 0.3s ease;
+}
+
+.tag-list li a:hover {
+  font-size: 30px;
+  background: #f6f6f6;
+}

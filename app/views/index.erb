@@ -1,12 +1,16 @@
+<div class="content-container">
+<h1 class='title'>Recent Posts:</h1>
+<ul class="posts-list">
+  <% @posts.each do |post| %>
+  <li><a href="/posts/<%= post.id %>">
+    <%= post.title %>
+  </a></li>
+  <% end %>
 
 
-
-
-<div class='right-outer'>
-  <h3>Tags:</h3>
-<ul class="right-sidebar">
-<% @tags.each do |tag| %>
-<li><a href="/tag/<%= tag.name %>"><button class='blue'><%= tag.name %></button></a></li>
-<% end %>
 </ul>
+
 </div>
+
+
+
