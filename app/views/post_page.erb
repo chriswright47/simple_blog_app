@@ -1,18 +1,18 @@
 <!-- this shows the home page of a single post -->
 
-<h3><%= @post.title %></h1>
-<h5>by <%= @user_name %></h5>
-<div><%= @post.body %></div>
+<h3 class='med-title'><%= @post.title %></h1>
+<h5 class='small-title '>by <a class='author-link' href="/user/<%= @post.user_id %>"><%= @user_name %></a></h5>
+<div class='post-text'><%= @post.body %></div>
 
-<ul id="post_tags">
+<ul class='top-bar'>
   <% @tags.each do |tag| %>
   <li><a href="/tag/<%= tag.name %>"><%= tag.name %></a></li>
 <% end %>
 </ul>
 <% if session[:user] %>
   <% if session[:user].posts.find_by_title(@post.title) == @post %>
-    <p><a href="/edit_post/<%= @post.id %>"><button>edit this post</button></a></p>
+    <p><a class='edit-delete' href="/edit_post/<%= @post.id %>"><button>edit this post</button></a></p>
 
-    <a href="/posts/<%= @post.id %>/delete"><button>Delete this post</button></a>
+    <a class='edit-delete' href="/posts/<%= @post.id %>/delete"><button>Delete this post</button></a>
   <% end %>
 <% end %>

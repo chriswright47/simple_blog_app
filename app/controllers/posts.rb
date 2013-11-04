@@ -5,8 +5,8 @@
 #   edit an existing post
 #   delete an existing post
 
-get '/posts' do
-  @posts = Post.order('updated_at desc')
+get '/posts/page/:page' do
+  @posts = Post.order('updated_at desc').paginate( per_page: 15, page: params[:page])
   erb :posts
 end
 

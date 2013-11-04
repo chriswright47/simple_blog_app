@@ -12,6 +12,8 @@
     <input type="checkbox" name="<%= tag.name %>" value="true"><%= tag.name %><br>
     <% end %>
   <% end %>
-  <input type="submit" value="Edit this post!">
-
+  <br>
+  <div class='edit-delete'><button><input type="submit" value="Edit this post!"></button></div>
 </form>
+
+<a href='/user/<%= @post.user_id %>' class='edit-delete'><button>Cancel</button></a>

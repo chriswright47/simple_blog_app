@@ -1,13 +1,32 @@
+<div class='wrapper'>
+
 <% if session[:email_taken] %>
 <h2>That email is already taken, please try again</h2>
 <% end %>
 
-<form action="/create_user" method="post">
-  <label for="name">Your name</label><br>
-  <input type="text" name="name"><br>
-  <label for="email">Please enter an email</label><br>
-  <input type="text" name="email"><br>
-  <label for="password">create a password</label><br>
-  <input type="text" name="password"><br>
-  <input type="submit" value="Create account">
+<form name='login-form' class='login-form' action="/create_user" method="post">
+  <div clas='form-header'>
+    <h1>Create account</h1>
+    <span></span>
+
+  </div>
+  <div class='content'>
+    <!-- <label for="name">Your name</label><br> -->
+  <input type="text" name="name" class='input username' placeholder='Username'>
+  <!-- <label for="email">Please enter an email</label><br> -->
+  <input type="text" name="email" class='input username' placeholder='email@mysite.com'>
+  <!-- <label for="password">create a password</label><br> -->
+  <input type="text" name="password" class='input password' placeholder='password'>
+  <div class='pass-icon'></div>
+  
+</div>
+<div class='footer'>
+  <input type="submit" value="Register" name='submit' class='submit-button'>
+</div>
 </form>
+
+</div>
+
+
+
+<div class='wrapper'>

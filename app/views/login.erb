@@ -1,11 +1,25 @@
+<div class='wrapper'>
+
 <% if session[:failed_login] %>
-<h2>You're email and password did not match any pairs in our database, please try again or create an account</h2>
+<h2 class>You're email and password did not match any pairs in our database, please try again or create an account</h2>
 <% end %>
 
-<form action="/login" method="post">
-  <label for="email">email</label><br>
-  <input type="text" name="email"><br>
-  <label for="password">password</label><br>
-  <input type="text" name="password"><br>
-  <input type="submit" value"Login">
+<form name='login-form' class='login-form' action="/login" method="post">
+  <div clas='form-header'>
+    <h1>Login please</h1>
+    <span></span>
+  </div>
+  <div class='content'>
+  <!-- <label for="email">Please enter an email</label><br> -->
+  <input type="text" name="email" class='input username' placeholder='email@mysite.com'>
+  <!-- <label for="password">create a password</label><br> -->
+  <input type="text" name="password" class='input password' placeholder='password'>
+  <div class='pass-icon'></div>
+  
+</div>
+<div class='footer'>
+  <input type="submit" value="Login" name='submit' class='submit-button'>
+</div>
 </form>
+
+</div>

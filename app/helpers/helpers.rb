@@ -13,7 +13,9 @@ helpers do
     ids
   end
 
-
+  def page_count
+    Post.all.count / 15 + 1
+  end
 
 
 
